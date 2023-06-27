@@ -1,29 +1,29 @@
 const winAudio = new Audio("win.wav");
 const spinningAudio = new Audio("spinning.wav");
 
-const debugEl = document.getElementById("debug"),
-  // Mapping of indexes to icons: start from banana in middle of initial position and then upwards
-  iconMap = [
-    "banana",
-    "seven",
-    "cherry",
-    "plum",
-    "orange",
-    "bell",
-    "bar",
-    "lemon",
-    "melon",
-  ],
+// const debugEl = document.getElementById("debug"),
+// Mapping of indexes to icons: start from banana in middle of initial position and then upwards
+(iconMap = [
+  "banana",
+  "seven",
+  "cherry",
+  "plum",
+  "orange",
+  "bell",
+  "bar",
+  "lemon",
+  "melon",
+]),
   // Width of the icons
-  icon_width = 79,
+  (icon_width = 79),
   // Height of one icon in the strip
-  icon_height = 79,
+  (icon_height = 79),
   // Number of icons in the strip
-  num_icons = 9,
+  (num_icons = 9),
   // Max-speed in ms for animating one icon down
-  time_per_icon = 100,
+  (time_per_icon = 100),
   // Holds icon indexes
-  indexes = [0, 0, 0];
+  (indexes = [0, 0, 0]);
 
 /**
  * Roll one reel
@@ -71,7 +71,7 @@ const roll = (reel, offset = 0) => {
  * Roll all reels, when promise resolves roll again
  */
 function rollAll() {
-  debugEl.textContent = "rolling...";
+  //   debugEl.textContent = "rolling...";
 
   const reelsList = document.querySelectorAll(".slots > .reel");
 
@@ -87,7 +87,7 @@ function rollAll() {
         (delta, i) => (indexes[i] = (indexes[i] + delta) % num_icons)
       );
 
-      debugEl.textContent = indexes.map((i) => iconMap[i]).join(" - ");
+      //   debugEl.textContent = indexes.map((i) => iconMap[i]).join(" - ");
 
       // Win conditions
       if (indexes[0] == indexes[1] || indexes[1] == indexes[2]) {

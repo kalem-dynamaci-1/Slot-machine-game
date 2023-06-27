@@ -106,9 +106,22 @@ body {
 .spin-btn {
   color: white;
   border: 1px solid white;
+  position: fixed;
+  left: 8em;
+  top: 1em;
 }
 .spin-btn:hover {
   background-color: white;
   color: black;
   border: 1px solid black;
+}
+
+@media (max-width: 500px) {
+  #leftimg {
+    display: none;
+  }
+  .spin-btn {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
